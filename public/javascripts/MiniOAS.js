@@ -1,0 +1,1 @@
+var MiniOAS = angular.module('MiniOAS', ['Cards', 'Transactions']);

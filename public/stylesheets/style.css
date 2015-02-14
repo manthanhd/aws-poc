@@ -1,0 +1,55 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgray;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.cardList .cardItem {
+  display: inline;
+}
+
+.card-header {
+  display: inline-block;
+}
+
+.positive-bal {
+  color: green;
+  display: inline-block;
+  float: right;
+}
+
+.negative-bal {
+  color: red;
+  display: inline-block;
+  float: right;
+}
+
+.right-text {
+  float: right;
+  display: inline-block;
+}
+
+.TransactionsBox {
+  height: 300px;
+  overflow: auto;
+}
+
+.CurrencyField {
+  text-align: right;
+}
+
+.Card-Box {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px;
+  padding: 35px;
+  padding-top: 2px;
+  margin-bottom: 20px;
+  box-shadow:0 3px 2px #aaa;
+  -webkit-box-shadow: 10pxpx 10pxpx 5pxpx 5pxpx #000000;
+  box-shadow: 10pxpx 10pxpx 5pxpx 5pxpx #000000;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html ng-app="MiniOAS">
+  <head>
+    
+    <title>MiniOAS Basic</title>
+    <!-- START Imports -->
+      <!-- <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+      <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css"/> -->
+      <link rel="stylesheet" href="/stylesheets/materialize.min.css"/>
+      <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+
+      <script type="text/javascript" src="/javascripts/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="/javascripts/materialize.min.js"></script>
+      
+<!--
+      <script type="text/javascript" src="/javascripts/angular.js"></script>
+      <script type="text/javascript" src="/javascripts/angular-resource.js"></script>
+      <script type="text/javascript" src="/javascripts/angular-animate.js"></script>
+      <script type="text/javascript" src="/javascripts/MiniOAS.js"></script>
+      <script type="text/javascript" src="/javascripts/controllers/CardController.js"></script>
+      <script type="text/javascript" src="/javascripts/controllers/TransactionController.js"></script>
+    -->
+    <!-- END Imports -->
+
+    <style>
+      
+      .main-panel {
+        padding-left: 240px;
+      }
+
+      .main-panel-content {
+        padding-left: 3px;
+      }
+
+      .main-logo {
+        padding-left: 10px !important;
+      }
+
+      .card-switchbox {
+        height: 150px !important;
+        z-index: 1;
+      }
+
+      .card-switchbox :hover {
+        color:inherit;
+        background-color: inherit;
+        background: inherit;
+      }
+
+      .card-background {
+        background: url("/images/card_aspire-elite.png") center center;
+        background-color: black;
+        background-size: cover;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*background: url(test.jpg) center center;*/
+        /*opacity: 0.7;*/
+        width: 100%;
+        height: 150px; 
+      }
+
+      .small-img {
+        width: 65px;
+        top: 15px;
+        position: relative;
+      }
+
+      .customer-name {
+        position: relative;
+        line-height: 20px;
+        color: white;
+      }
+
+      .gray-text {
+        color: gray !important;
+      }
+
+      .inline-block {
+        display: inline-block;;
+      }
+
+      .pull-right {
+        float: right;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .opaque {
+        opacity: 1;
+      }
+
+      .translucent-strip {
+        background-color: black;
+        opacity: 0.8;
+        width: 240px;
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <ul id="slide-out" class="side-nav fixed">
+      <li class="card-switchbox">
+        <!-- <div class=""> -->
+          <div class="card-background"></div>
+          <img src="http://fc02.deviantart.net/fs71/f/2012/171/6/2/profile_picture_by_iron_man_fans_points-d546w97.jpg" class="circle deep-purple lighten-5 responsive-img small-img opaque"/>
+          <div class="customer-name translucent-strip">
+            <strong>Manthan Dave</strong> <br/>
+            Your Classic card ending 8888.
+          </div>
+        <!-- </div> -->
+      </li>
+      <li><a href="#!"><i class=" mdi-action-dashboard"></i> At a glance</a></li>
+      <li><a href="#!"><i class=" mdi-action-credit-card"></i> Your transactions</a></li>
+      <li><a href="#!"><i class=" mdi-action-payment"></i> Make a payment</a></li>
+      <li><a href="#!"><i class=" mdi-action-credit-card"></i> Card options</a></li>
+
+      <li class="divider"></li>
+      <li><a href="#!"><i class=" mdi-social-person"></i> Your details</a></li>
+      <li><a href="#!"><i class=" mdi-action-help"></i> Help center</a></li>
+
+    </ul>
+    
+    <div class="main-panel">
+      <nav>
+        <div class="nav-wrapper blue darken-4">
+          <a href="#" class="brand-logo main-logo"> Capital One</a>
+          <ul id="nav-mobile" class="right side-nav">
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="main-panel-content">
+        <div class="row">
+          <div class="col s6">
+            <div class="card">
+              <div class="card-content">
+                <h6 class="card-title gray-text">
+                  Recent activity
+                </h6>
+
+                <div>
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="http://upload.wikimedia.org/wikipedia/en/3/35/Starbucks_Coffee_Logo.svg" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                      <h5 class="inline-block">Starbucks</h5>
+                      <div class="pull-right align-right gray-text">
+                        £2.40 <br/>
+                        10th January 2015 08:08 AM <br/>
+                        <i class="mdi-communication-location-on">Nottingham, UK</i>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/2000px-Ikea_logo.svg.png" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                      <h5 class="inline-block">Ikea</h5>
+                      <div class="pull-right align-right gray-text">
+                        £835.01 <br/>
+                        08th January 2015 18:32 AM <br/>
+                        <i class="mdi-communication-location-on">Älmhult Municipality, Sweden</i>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="http://img2.wikia.nocookie.net/__cb20140808235058/logopedia/images/6/64/Subway_logo.jpg" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                      <h5 class="inline-block">Subway</h5>
+                      <div class="pull-right align-right gray-text">
+                        £5.60 <br/>
+                        08th January 2015 12:37 AM <br/>
+                        <i class="mdi-communication-location-on">London, UK</i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="http://www.stickylife.com/images/u/5082893acb2348ab9c043eb664601279-800.png" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                      <h5 class="inline-block">Payment</h5>
+                      <div class="pull-right align-right gray-text">
+                        £50.00 <br/>
+                        28th December 2014 10:42 AM <br/>
+                        <i class="mdi-communication-location-on">Nottingham, UK</i>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="http://mediaserver.pulse2.com/wp-content/uploads/2014/03/Uber-Logo-550x550.jpg" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                      <h5 class="inline-block">Uber</h5>
+                      <div class="pull-right align-right gray-text">
+                        £17.85 <br/>
+                        24th December 2014 11:45 PM <br/>
+                        <i class="mdi-communication-location-on">London, UK</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

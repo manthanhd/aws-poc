@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="MiniOAS">
+  <head>
+    
+    <title>MiniOAS Basic</title>
+    <!-- START Imports -->
+      <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+      <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css"/>
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+
+      <script type="text/javascript" src="/javascripts/angular.js"></script>
+      <script type="text/javascript" src="/javascripts/angular-resource.js"></script>
+      <script type="text/javascript" src="/javascripts/angular-animate.js"></script>
+      <script type="text/javascript" src="/javascripts/MiniOAS.js"></script>
+      <script type="text/javascript" src="/javascripts/controllers/CardController.js"></script>
+      <script type="text/javascript" src="/javascripts/controllers/TransactionController.js"></script>
+    <!-- END Imports -->
+
+  </head>
+  <body>
+    <div class="container">
+      <div ng-controller="CardController">
+        <div class="row" ng-repeat="card in cards">
+          <div class="col-md-12">
+            <div class="Card-Box">
+              <div class="row">
+                <h2 class="card-header">{{card.cardName}}</h2>
+                <h2 ng-class="{'positive-bal' : card.isBalPositive, 'negative-bal' : !card.isBalPositive}">{{card.currentBalance | currency: "£":2}} / {{card.limit | currency: "£":2}} </h2>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <img ng-src="/images/{{card.cardImage}}" height="100px"/>
+                </div>
+                <div class="col-md-10 TransactionsBox" ng-controller="TransactionController">
+                  <h3 style="display: inline-block">Transactions</h3>
+                  <h4 style="float:right; display: inline-block; vertical-align: middle;"><a href="#">Full view</a></h4>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="transaction in transactions">
+                        <td>{{transaction.description}}</td>
+                        <td>{{transaction.type}}</td>
+                        <td class="CurrencyField">{{transaction.value | currency: "£":2}}</td>
+                        <td>{{transaction.transactionDate | date: 'medium'}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
