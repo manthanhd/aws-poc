@@ -1,7 +1,7 @@
 var card = angular.module('Cards', ['ngResource']);
 card.controller('CardController', function($scope, $resource){
   $scope.$parent.accountNumber = "1000000007";
-  var Card = $resource('http://localhost:3000/db/cards/list/' + $scope.$parent.accountNumber);
+  var Card = $resource('/db/cards/list/' + $scope.$parent.accountNumber);
   $scope.cardNames = ["Classic Credit Card", "Vauxhall Card", "Aspire Elite Card", "Classic Extra Card", "Aspire Business Card"];
   $scope.cardImages = ["classiccreditcard-card.jpg", "vauxhall-card.jpg", "aspireelite-card.jpg", "classicextra-card.jpg", "aspirebusiness-card.png"];
 
