@@ -11,4 +11,8 @@ router.get('/material', function(req, res) {
   res.render('material');
 });
 
+router.get('/ping', function(req, res) {
+    res.send({status: 'OK'});
+})
+
 module.exports = router;
