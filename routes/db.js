@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/MiniOASDB');
+mongoose.connect('mongodb://' + process.env.DBUSER + ":" + process.env.DBPASS + '@ds039271.mongolab.com:39271/oasdb');
 
 var AccountModel = require('./lib/AccountModel');
 var CardModel = require('./lib/CardModel');
